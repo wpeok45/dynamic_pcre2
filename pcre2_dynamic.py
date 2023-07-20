@@ -23,7 +23,7 @@ def preg_match(compiled_pattern, subj: str):
     subject = subj.encode("utf-8")
 
     try:
-        match_data=PCRE2.pcre2_match_data_create_8(ctypes.c_uint32(100), None)
+        match_data=PCRE2.pcre2_match_data_create_8(ctypes.c_uint32(1), None)
         ov_ptr=PCRE2.pcre2_get_ovector_pointer_8(match_data)
         ov_ptr.contents[1] = 0
 
