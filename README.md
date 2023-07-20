@@ -31,7 +31,7 @@ compiled_pattern=PCRE2.pcre2_compile_8(pattern_bytes,
                                 None)
 PCRE2.pcre2_jit_compile_8(compiled_pattern, ctypes.c_uint32(0x1))
 
-start, end = preg_match(compiled_pattern, subject)
+start, end = pcre2_dynamic.preg_match(compiled_pattern, subject)
 if start > -1:
     print(f"found {subject[start:end]}")
 
